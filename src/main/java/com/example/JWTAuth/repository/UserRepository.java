@@ -1,4 +1,9 @@
 package com.example.JWTAuth.repository;
 
-public interface UserRepository {
+
+import com.example.JWTAuth.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Integer> {
+    User findByUserName(String username);
 }
